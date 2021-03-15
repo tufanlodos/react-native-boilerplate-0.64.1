@@ -14,7 +14,11 @@
 ## Installation
 
 - `cd` into cloned repository
-- `yarn`
+- run command `yarn`
+- `cd ios`
+- run command `pod install`
+- `cd ..`
+- run command `npm run ios` for ios, `npm run android` for android
 
 ---
 
