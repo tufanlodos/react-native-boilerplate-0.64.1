@@ -2,19 +2,19 @@
 
 ## Includes
 
-  * React 17
-  * React Native 0.64.0
-  * React Navigation 5
-  * React Native Async Storage
-  * React Native Device Info
-  * React Native Root Toast
-  * React Native Vector Icons
-  * ESLint & Prettier configurations
+- React 17
+- React Native 0.64.0
+- React Navigation 5 (includes stack and bottom-tabs)
+- React Native Async Storage
+- React Native Device Info
+- React Native Root Toast
+- React Native Vector Icons
+- ESLint & Prettier configurations
 
 ## Installation
 
-  * `cd` into cloned repository
-  * `yarn`
+- `cd` into cloned repository
+- `yarn`
 
 ---
 

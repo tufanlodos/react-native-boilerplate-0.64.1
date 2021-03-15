@@ -1,4 +1,6 @@
 {
   "name": "ReactNativeBoilerplate",
-  "displayName": "ReactNativeBoilerplate"
+  "displayName": "React Native Boilerplate",
+  "version": "0.0.1",
+  "versionCode": 1
 }
