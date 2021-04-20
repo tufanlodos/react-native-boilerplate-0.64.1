@@ -6,7 +6,7 @@ const storeStorageData = async (keyName, value) => {
     const jsonValue = JSON.stringify(value);
     return await AsyncStorage.setItem(keyName, jsonValue);
   } catch (e) {
-    // error reading value
+    throw new Error(`An error occured when ${keyName} writing : ${JSON.stringify(e)}`);
   }
 };
 
@@ -15,7 +15,7 @@ const getStorageData = async (keyName) => {
     const jsonValue = await AsyncStorage.getItem(keyName);
     return jsonValue != null ? JSON.parse(jsonValue) : null;
   } catch (e) {
-    // error reading value
+    throw new Error(`An error occured when ${keyName} reading : ${JSON.stringify(e)}`);
   }
 };
 
@@ -23,7 +23,7 @@ const removeStorageData = async (keyName) => {
   try {
     return await AsyncStorage.removeItem(keyName);
   } catch (e) {
-    // remove error
+    throw new Error(`An error occured when ${keyName} removing : ${JSON.stringify(e)}`);
   }
 };
 
