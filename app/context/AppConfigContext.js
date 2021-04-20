@@ -26,7 +26,7 @@ const reducer = (state, action) => {
 };
 
 const setReady = (dispatch) => {
-  // only triggered from authstack ve mainTab tetikliyor.
+  // only triggered from authstack ve mainTab.
   return async () => {
     dispatch({ type: "setLoading", payload: true });
 
