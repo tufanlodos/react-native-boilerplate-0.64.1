@@ -10,9 +10,7 @@ const ENV = {
   isMobileSize:
     (Dimensions.get("window").width * Dimensions.get("window").scale) / PixelRatio.get() < 600,
   hasNotch: hasNotch(),
-  CUSTOM_MESSAGES_KEY_NAME: "customMessages",
-  STORAGE_ACCOUNT_KEY_NAME: "accountInfo",
-  STORAGE_ENV_ITEM: "envItem"
+  STORAGE_ACCOUNT_KEY_NAME: "accountInfo"
 };
 
 // eslint-disable-next-line import/prefer-default-export
