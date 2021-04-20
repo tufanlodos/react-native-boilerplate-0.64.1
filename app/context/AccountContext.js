@@ -1,40 +1,46 @@
 import createDataContext from "./createDataContext";
-import { storeStorageData, removeStorageData } from "../lib/storage-operations";
-import { ENV } from "../config/configurations";
+import { getStorageData, storeStorageData, removeStorageData } from "../lib/storage-operations";
+import { ASYNC_STORAGE_KEYS } from "../config/configurations";
 
 const initialState = {
-  initialized: false,
-  account: {}
+  ready: false,
+  data: null // LoginResponseModel
 };
 
 const accountReducer = (state, action) => {
   switch (action.type) {
     case "set_account":
-      return { ...state, ...action.payload, initialized: true };
+      return { ...state, data: action.payload, ready: true };
     case "clear_account":
-      return {};
+      return initialState;
     default:
       return state;
   }
 };
 
 const setAccount = (dispatch) => {
+  // only triggered from login-area and mainTab
   return async (data, callback) => {
-    await storeStorageData(ENV.STORAGE_ACCOUNT_KEY_NAME, data);
-    dispatch({ type: "set_account", payload: data });
-    if (callback) {
-      callback();
+    let userData;
+    if (data) {
+      userData = data;
+      await storeStorageData(ASYNC_STORAGE_KEYS.LOGIN_RESPONSE_ITEM, userData);
+    } else {
+      userData = await getStorageData(ASYNC_STORAGE_KEYS.LOGIN_RESPONSE_ITEM);
     }
+
+    dispatch({ type: "set_account", payload: userData });
+
+    callback?.();
   };
 };
 
 const clearAccount = (dispatch) => {
   return async (callback) => {
-    await removeStorageData(ENV.STORAGE_ACCOUNT_KEY_NAME);
+    await removeStorageData(ASYNC_STORAGE_KEYS.LOGIN_RESPONSE_ITEM);
     dispatch({ type: "clear_account" });
-    if (callback) {
-      callback();
-    }
+
+    callback?.();
   };
 };
 
