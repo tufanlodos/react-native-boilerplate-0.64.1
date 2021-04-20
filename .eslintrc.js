@@ -26,7 +26,8 @@ module.exports = {
     "react/jsx-indent": "off",
     "react/jsx-first-prop-new-line": ["warn", "multiline"],
     "react/jsx-max-props-per-line": ["warn", { maximum: 1, when: "multiline" }],
-    "react/destructuring-assignment": "warn"
+    "react/destructuring-assignment": "warn",
+    "consistent-return": "off"
   },
   globals: {
     fetch: false
