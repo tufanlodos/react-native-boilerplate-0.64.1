@@ -5,7 +5,7 @@ const ENV = {
   deviceWidth: Dimensions.get("window").width,
   deviceHeight: Dimensions.get("window").height,
   diagonalScreenSize:
-    (Dimensions.get("window").width ** 2 + Dimensions.get("window").height ** 2) ** (1 / 2), // Ekranın çapraz uzunluğu 9.7 inç tablet için 1280 px değerini  iPhone 8 (4.7 inç) için  765 px değerini veriyor.
+    (Dimensions.get("window").width ** 2 + Dimensions.get("window").height ** 2) ** (1 / 2),
   mobileBreakPoint: 600, // alcatel 1T 7" width
   isMobileSize:
     (Dimensions.get("window").width * Dimensions.get("window").scale) / PixelRatio.get() < 600,
