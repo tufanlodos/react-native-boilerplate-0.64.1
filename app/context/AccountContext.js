@@ -19,14 +19,14 @@ const accountReducer = (state, action) => {
 };
 
 const setAccount = (dispatch) => {
-  // only triggered from login-area and mainTab
+  // only triggered after login operation and MainTab initialization
   return async (data, callback) => {
     let userData;
     if (data) {
       userData = data;
-      await storeStorageData(ASYNC_STORAGE_KEYS.LOGIN_RESPONSE_ITEM, userData);
+      await storeStorageData(ASYNC_STORAGE_KEYS.ACCOUNT_ITEM, userData);
     } else {
-      userData = await getStorageData(ASYNC_STORAGE_KEYS.LOGIN_RESPONSE_ITEM);
+      userData = await getStorageData(ASYNC_STORAGE_KEYS.ACCOUNT_ITEM);
     }
 
     dispatch({ type: "set_account", payload: userData });
@@ -36,8 +36,9 @@ const setAccount = (dispatch) => {
 };
 
 const clearAccount = (dispatch) => {
+  // only triggered after logout operation
   return async (callback) => {
-    await removeStorageData(ASYNC_STORAGE_KEYS.LOGIN_RESPONSE_ITEM);
+    await removeStorageData(ASYNC_STORAGE_KEYS.ACCOUNT_ITEM);
     dispatch({ type: "clear_account" });
 
     callback?.();

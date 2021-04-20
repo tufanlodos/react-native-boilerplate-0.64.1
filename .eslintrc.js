@@ -10,7 +10,9 @@ module.exports = {
     quotes: ["warn", "double", { avoidEscape: true }],
     "no-console": "warn",
     "no-alert": "error",
+    "no-plusplus": "off",
     "no-use-before-define": "off",
+    "no-nested-ternary": "off",
     "react/jsx-filename-extension": "off",
     "react/prop-types": "off",
     "comma-dangle": "off",
@@ -27,7 +29,8 @@ module.exports = {
     "react/jsx-first-prop-new-line": ["warn", "multiline"],
     "react/jsx-max-props-per-line": ["warn", { maximum: 1, when: "multiline" }],
     "react/destructuring-assignment": "warn",
-    "consistent-return": "off"
+    "consistent-return": "off",
+    "import/prefer-default-export": "warn"
   },
   globals: {
     fetch: false

@@ -15,8 +15,8 @@ import { Provider as AccountProvider } from "../context/AccountContext";
 import ErrorBoundary from "../components/error-boundary/index";
 import { getStorageData } from "../lib/storage-operations";
 import useScreenDimensions from "../lib/orientation";
-import { ENV } from "../config/configurations";
-import RouteNames from "./config/route-names";
+import { ASYNC_STORAGE_KEYS } from "../config/configurations";
+import ROUTE_NAMES from "./config/route-names";
 import Styles from "../config/styles";
 import Colors from "../assets/data/color-list";
 
@@ -24,7 +24,7 @@ const RootStack = createStackNavigator();
 
 const App = () => {
   const [initializeState, setInitializeState] = useState(true);
-  const [initialRouteName, setInitialRouteName] = useState(RouteNames.AUTH_STACK);
+  const [initialRouteName, setInitialRouteName] = useState(ROUTE_NAMES.AUTH_STACK);
   const orientation = useScreenDimensions();
 
   const AppTheme = {
@@ -41,12 +41,12 @@ const App = () => {
 
   const checkAccountAndInit = async () => {
     // account context is not available here (because its provider is in this file)
-    const userData = await getStorageData(ENV.STORAGE_ACCOUNT_KEY_NAME);
+    const userData = await getStorageData(ASYNC_STORAGE_KEYS.ACCOUNT_ITEM);
 
     if (userData) {
-      setInitialRouteName(RouteNames.MAIN_TAB);
+      setInitialRouteName(ROUTE_NAMES.MAIN_TAB);
     } else {
-      setInitialRouteName(RouteNames.AUTH_STACK);
+      setInitialRouteName(ROUTE_NAMES.AUTH_STACK);
     }
 
     setInitializeState(false);
@@ -71,8 +71,8 @@ const App = () => {
                   <NavigationContainer ref={navigationRef} theme={AppTheme}>
                     <StatusBar backgroundColor={Colors.white} barStyle="dark-content" />
                     <RootStack.Navigator initialRouteName={initialRouteName} headerMode="none">
-                      <RootStack.Screen name={RouteNames.AUTH_STACK} component={AuthStack} />
-                      <RootStack.Screen name={RouteNames.MAIN_TAB} component={MainTab} />
+                      <RootStack.Screen name={ROUTE_NAMES.AUTH_STACK} component={AuthStack} />
+                      <RootStack.Screen name={ROUTE_NAMES.MAIN_TAB} component={MainTab} />
                     </RootStack.Navigator>
                   </NavigationContainer>
                 </SafeAreaProvider>

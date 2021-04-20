@@ -73,6 +73,9 @@ const styles = StyleSheet.create({
   bgTransparent: {
     backgroundColor: Colors.transparent
   },
+  bgSecondaryDark: {
+    backgroundColor: Colors.secondaryDark
+  },
   textWhite: {
     color: Colors.white
   },
@@ -256,7 +259,6 @@ const styles = StyleSheet.create({
     marginRight: 20
   },
   screenDefaultPadding: {
-    paddingVertical: 0,
     paddingHorizontal: ENV.isMobileSize ? wp("%1.2") : 20,
     marginTop: Platform.OS === "android" ? 20 : 0,
     paddingTop: ENV.hasNotch ? -25 : 0,
@@ -272,36 +274,9 @@ const styles = StyleSheet.create({
     marginVertical: 10,
     marginHorizontal: 20
   },
-  questionCardDefault: {
-    backgroundColor: Colors.white,
-    borderRadius: 6,
-    marginBottom: 15
-  },
-  questionCardDefaultHeaderContainer: {
-    padding: 20,
-    flexDirection: "row",
-    alignItems: "center",
-    borderBottomWidth: 1,
-    borderBottomColor: Colors.brightGrey
-  },
-  questionCardHeaderText: {
-    flex: 1,
-    color: Colors.secondary,
-    fontWeight: "700",
-    fontSize: 14,
-    marginLeft: 10
-  },
-  questionCardOperationButtonContainer: {
-    width: 20,
-    height: 20
-  },
-  questionCardDefaultBodyContainer: {
-    padding: 25,
-    flexDirection: "row"
-  },
   button: {
     color: Colors.white,
-    paddingVertical: 15,
+    paddingVertical: 12,
     paddingHorizontal: wp("%7.5"),
     borderRadius: 6,
     marginVertical: 10
@@ -325,6 +300,15 @@ const styles = StyleSheet.create({
     lineHeight: 20,
     letterSpacing: -0.41,
     textAlign: "center"
+  },
+  outlineButtonWhite: {
+    borderColor: Colors.white,
+    borderWidth: 1,
+    borderRadius: 5,
+    paddingVertical: 8,
+    paddingHorizontal: 8,
+    justifyContent: "center",
+    alignItems: "center"
   },
   roundButtonText: {
     fontSize: 12,
@@ -350,9 +334,8 @@ const styles = StyleSheet.create({
     fontSize: 12,
     textAlign: "center"
   },
-  // eslint-disable-next-line react-native/no-color-literals
   inputPrimary: {
-    backgroundColor: "transparent",
+    backgroundColor: Colors.transparent,
     color: Colors.secondaryDark,
     paddingTop: 15,
     paddingBottom: 15,
@@ -362,10 +345,33 @@ const styles = StyleSheet.create({
   },
   inputSecondary: {
     backgroundColor: Colors.lightGrey,
-    color: Colors.greyDark,
-    padding: 15,
+    color: Colors.black,
+    padding: 12,
+    paddingLeft: 10,
     borderRadius: 5,
-    marginBottom: 10
+    marginTop: 10
+  },
+  inputDefaultBorder: {
+    borderWidth: 1,
+    borderColor: Colors.lightGrey,
+    borderRadius: 5
+  },
+  borderBottomBrightGrey1: {
+    borderBottomColor: Colors.brightGrey,
+    borderBottomWidth: 1
+  },
+  inputTitleText: {
+    color: Colors.secondaryDark,
+    fontWeight: "bold"
+  },
+  baseDropdownStyle: {
+    backgroundColor: Colors.white,
+    padding: 10,
+    flex: 1,
+    flexDirection: "row",
+    justifyContent: "space-between",
+    alignItems: "center",
+    margin: 1
   },
   pickerContainerPrimary: {
     borderBottomWidth: 1,
@@ -373,6 +379,9 @@ const styles = StyleSheet.create({
     paddingBottom: 10,
     marginBottom: 10,
     marginTop: 5
+  },
+  minHeightForPicker: {
+    minHeight: 37.5
   },
   badge: {
     paddingVertical: 3,
@@ -385,6 +394,7 @@ const styles = StyleSheet.create({
     letterSpacing: -0.27,
     flexWrap: "nowrap"
   },
+
   badgeRec: {
     paddingVertical: 4,
     paddingHorizontal: 6,
@@ -449,18 +459,21 @@ const styles = StyleSheet.create({
     shadowRadius: 3,
     elevation: 10
   },
+  screenTabsScrollContainer: {
+    maxHeight: 70,
+    width: "100%"
+  },
   screenTabsContainer: {
     flexDirection: "row",
-    width: "100%",
     borderRadius: 5,
     backgroundColor: Colors.white
   },
   screenTabsButtonContainer: {
+    flex: 1,
     alignItems: "center",
     justifyContent: "center",
-    paddingVertical: 20,
-    paddingTop: 23,
-    paddingHorizontal: 10,
+    paddingHorizontal: 20,
+    paddingVertical: 15,
     borderBottomWidth: 2,
     borderBottomColor: Colors.white
   },
@@ -472,6 +485,17 @@ const styles = StyleSheet.create({
     fontSize: 13,
     lineHeight: 13,
     color: Colors.secondary
+  },
+  screenTabsActiveButtonText: {
+    fontWeight: "900",
+    fontSize: 14,
+    lineHeight: 14,
+    color: Colors.secondary
+  },
+  basHeaderContainer: {
+    alignItems: "center",
+    marginVertical: 0,
+    paddingVertical: 15
   },
   basPrimaryButtonsHeaderContainer: {
     flexDirection: "row",
@@ -499,31 +523,37 @@ const styles = StyleSheet.create({
     letterSpacing: -0.39,
     fontWeight: "bold"
   },
-  basPrimaryButtonsBodyContainer: {
-    paddingHorizontal: 30
-    // paddingLeft: 30
+  basListButtonsBodyContainer: {
+    paddingHorizontal: 30,
+    flex: 1
   },
-  basPrimaryButtonsBodyButtonContainer: {
-    flexDirection: "row",
-    alignItems: "center",
-    width: "100%",
-    paddingVertical: 20
-  },
-  basPrimaryButtonsBodyButtonSecondaryContainer: {
+  basListButtonDefaultContainer: {
     flexDirection: "row",
     alignItems: "center",
     justifyContent: "space-between",
     paddingHorizontal: 10,
     paddingVertical: 14
   },
-  basPrimaryButtonsBodyButtonText: {
+  basDetailButtonDefaultContainer: {
+    flexDirection: "row",
+    alignItems: "center",
+    width: "100%",
+    paddingVertical: 20
+  },
+  basBodyButtonDefaultText: {
     fontWeight: "bold",
     fontSize: 16,
     color: Colors.secondary,
     flex: 1
   },
-  screenTabsActiveButtonText: {
-    color: Colors.primary
+  basBodyButtonDefaultCircle: {
+    width: 12,
+    height: 12,
+    borderRadius: 12,
+    borderColor: Colors.primary,
+    borderWidth: 1.5,
+    backgroundColor: Colors.white,
+    marginRight: 6
   },
   br6: {
     borderRadius: 6
@@ -565,6 +595,9 @@ const styles = StyleSheet.create({
   },
   mt20: {
     marginTop: 20
+  },
+  mb20: {
+    marginBottom: 20
   },
   mb10: {
     marginBottom: 10
@@ -644,11 +677,14 @@ const styles = StyleSheet.create({
   pv10: {
     paddingVertical: 10
   },
-  pv15: {
-    paddingVertical: 15
+  ph20: {
+    paddingHorizontal: 20
   },
   pv20: {
     paddingVertical: 20
+  },
+  pv15: {
+    paddingVertical: 15
   },
   pv5: {
     paddingVertical: 5
@@ -694,12 +730,6 @@ const styles = StyleSheet.create({
     bottom: 10,
     right: 10,
     left: 10
-  },
-  hitSlop32: {
-    top: 32,
-    bottom: 32,
-    right: 32,
-    left: 32
   },
   maxwUnset: {
     maxWidth: wp("100")
@@ -759,7 +789,7 @@ const styles = StyleSheet.create({
     borderColor: Colors.primary,
     borderRadius: 5
   },
-  borderSecondaryDark: {
+  borderSecondaryDark1: {
     borderWidth: 1,
     borderColor: Colors.secondaryDark,
     borderRadius: 5
@@ -783,7 +813,18 @@ const styles = StyleSheet.create({
   maxWidthLimitCompactViewInput: {
     maxWidth: wp("40")
   },
-  maxWidthLimitDefaultViewInput: {}
+  maxWidthLimitDefaultViewInput: {},
+  // eslint-disable-next-line react-native/no-color-literals
+  showBoundry: {
+    borderWidth: 3,
+    borderColor: "red"
+  },
+  dFlex: {
+    display: "flex"
+  },
+  dNone: {
+    display: "none"
+  }
 });
 
 export default styles;

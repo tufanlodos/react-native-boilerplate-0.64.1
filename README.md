@@ -21,7 +21,8 @@
 - run command `npm run ios` for ios, `npm run android` for android
 
 ## After Succesfully Build
-- you can use **react-native-rename** cli tool for rename entire app. for more information: https://www.npmjs.com/package/react-native-rename
+
+- You can use **react-native-rename** cli tool for rename entire app. For more information: https://www.npmjs.com/package/react-native-rename
 
 ---
 

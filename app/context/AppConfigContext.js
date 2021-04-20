@@ -1,5 +1,5 @@
 import createDataContext from "./createDataContext";
-import * as DefaultTexts from "../../app_texts_default_tr.json";
+import * as DefaultTexts from "../../app_texts_default.json";
 
 const initialState = {
   loading: false,

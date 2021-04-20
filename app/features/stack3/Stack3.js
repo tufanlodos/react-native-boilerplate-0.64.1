@@ -2,14 +2,14 @@ import React from "react";
 import { Platform } from "react-native";
 import { createStackNavigator } from "@react-navigation/stack";
 import Icon from "react-native-vector-icons/Feather";
-import RouteNames from "../../navigation/config/route-names";
+import ROUTE_NAMES from "../../navigation/config/route-names";
 import Stack3Screen from "./screens/main/index";
 import Styles from "../../config/styles";
 
 const Stack = createStackNavigator();
 const Stack4 = () => (
   <Stack.Navigator
-    initialRouteName={RouteNames.STACK_3_MAIN}
+    initialRouteName={ROUTE_NAMES.STACK_3_MAIN}
     screenOptions={{
       animationEnabled: true,
       headerTitleStyle: Styles.headerTitleStyle,
@@ -25,7 +25,11 @@ const Stack4 = () => (
       )
     }}
   >
-    <Stack.Screen name={RouteNames.STACK_3_MAIN} options={{ title: "" }} component={Stack3Screen} />
+    <Stack.Screen
+      name={ROUTE_NAMES.STACK_3_MAIN}
+      options={{ title: "" }}
+      component={Stack3Screen}
+    />
   </Stack.Navigator>
 );
 

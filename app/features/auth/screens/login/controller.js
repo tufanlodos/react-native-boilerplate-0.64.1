@@ -1,6 +1,4 @@
-import { ENV } from "../../../../config/configurations";
-import { storeStorageData } from "../../../../lib/storage-operations";
-import RouteNames from "../../../../navigation/config/route-names";
+import ROUTE_NAMES from "../../../../navigation/config/route-names";
 
 const initialState = {
   initialized: false
@@ -15,9 +13,9 @@ const reducer = (state, action) => {
   }
 };
 
-const handleLoginSubmit = async (navigation) => {
-  await storeStorageData(ENV.STORAGE_ACCOUNT_KEY_NAME, "USER");
-  navigation.replace(RouteNames.MAIN_TAB);
+const handleLoginSubmit = async (navigation, accountContext) => {
+  accountContext.setAccount({ username: "johndoe", token: null });
+  navigation.replace(ROUTE_NAMES.MAIN_TAB);
 };
 
 export { initialState, reducer, handleLoginSubmit };

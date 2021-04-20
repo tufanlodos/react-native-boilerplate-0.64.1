@@ -2,7 +2,7 @@
 import React from "react";
 import { View, Text, TouchableOpacity } from "react-native";
 import Icon from "react-native-vector-icons/Feather";
-import RouteNames from "../../config/route-names";
+import ROUTE_NAMES from "../../config/route-names";
 import { ENV } from "../../../config/configurations";
 import Colors from "../../../assets/data/color-list";
 import Styles from "../../../config/styles";
@@ -53,28 +53,28 @@ const MainTabBarComponent = ({ state, descriptors, navigation }) => {
             // onLongPress={onLongPress}
           >
             <View style={[Styles.fdCol, Styles.jcCenter, Styles.algiCenter, OwnStyles.mb3]}>
-              {route.name === RouteNames.STACK_1 && (
+              {route.name === ROUTE_NAMES.STACK_1 && (
                 <Icon
                   size={mainTabBarIconSize}
                   name="home"
                   color={!isFocused ? Colors.grey : Colors.primary}
                 />
               )}
-              {route.name === RouteNames.STACK_2 && (
+              {route.name === ROUTE_NAMES.STACK_2 && (
                 <Icon
                   size={mainTabBarIconSize}
                   name="search"
                   color={!isFocused ? Colors.grey : Colors.primary}
                 />
               )}
-              {route.name === RouteNames.STACK_3 && (
+              {route.name === ROUTE_NAMES.STACK_3 && (
                 <Icon
                   size={mainTabBarIconSize}
                   name="meh"
                   color={!isFocused ? Colors.grey : Colors.primary}
                 />
               )}
-              {route.name === RouteNames.STACK_4 && (
+              {route.name === ROUTE_NAMES.STACK_4 && (
                 <Icon
                   size={mainTabBarIconSize}
                   name="settings"

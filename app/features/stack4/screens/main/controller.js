@@ -1,6 +1,4 @@
-import { ENV } from "../../../../config/configurations";
-import { removeStorageData } from "../../../../lib/storage-operations";
-import RouteNames from "../../../../navigation/config/route-names";
+import ROUTE_NAMES from "../../../../navigation/config/route-names";
 
 const initialState = {
   initialized: false
@@ -15,9 +13,9 @@ const reducer = (state, action) => {
   }
 };
 
-const handleLogoutSubmit = async (navigation) => {
-  await removeStorageData(ENV.STORAGE_ACCOUNT_KEY_NAME);
-  navigation.replace(RouteNames.AUTH_STACK);
+const handleLogoutSubmit = async (navigation, accountContext) => {
+  accountContext.clearAccount();
+  navigation.replace(ROUTE_NAMES.AUTH_STACK);
 };
 
 export { initialState, reducer, handleLogoutSubmit };

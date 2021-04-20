@@ -9,9 +9,12 @@ const ENV = {
   mobileBreakPoint: 600, // alcatel 1T 7" width
   isMobileSize:
     (Dimensions.get("window").width * Dimensions.get("window").scale) / PixelRatio.get() < 600,
-  hasNotch: hasNotch(),
-  STORAGE_ACCOUNT_KEY_NAME: "accountInfo"
+  hasNotch: hasNotch()
+};
+
+const ASYNC_STORAGE_KEYS = {
+  ACCOUNT_ITEM: "accountInfo" // LoginResponseModel
 };
 
 // eslint-disable-next-line import/prefer-default-export
-export { ENV };
+export { ENV, ASYNC_STORAGE_KEYS };
