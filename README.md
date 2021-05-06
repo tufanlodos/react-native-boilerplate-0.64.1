@@ -10,6 +10,7 @@
 - React Native Root Toast
 - React Native Vector Icons
 - ESLint & Prettier configurations
+- Context for Orientation
 
 ## Installation
 
