@@ -13,7 +13,7 @@ const ENV = {
 };
 
 const ASYNC_STORAGE_KEYS = {
-  ACCOUNT_ITEM: "accountInfo" // LoginResponseModel
+  ACCOUNT_ITEM: "accountInfo"
 };
 
 // eslint-disable-next-line import/prefer-default-export

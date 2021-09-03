@@ -10,7 +10,7 @@ import { Context as AppConfigContext } from "../context/AppConfigContext";
 import { Context as AccountContext } from "../context/AccountContext";
 import ROUTE_NAMES from "./config/route-names";
 import Styles from "../config/styles";
-import Colors from "../assets/data/color-list";
+import Colors from "../assets/data/color-list.json";
 
 const Main = createBottomTabNavigator();
 const MainTab = () => {

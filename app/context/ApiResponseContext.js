@@ -1,8 +1,8 @@
 import Toast from "react-native-root-toast";
 import { Platform } from "react-native";
 import createDataContext from "./createDataContext";
-import Enums from "../assets/data/enums";
-import Colors from "../assets/data/color-list";
+import Enums from "../assets/data/enums.json";
+import Colors from "../assets/data/color-list.json";
 import { ENV } from "../config/configurations";
 
 const initialState = {

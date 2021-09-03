@@ -49,7 +49,7 @@ Base OwnStyle :
 
 ```js
 import { StyleSheet } from "react-native";
-import Colors from "../../../../assets/data/color-list";
+import Colors from "../../../../assets/data/color-list.json";
 
 const styles = StyleSheet.create({});
 

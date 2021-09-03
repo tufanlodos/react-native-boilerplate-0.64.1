@@ -4,7 +4,7 @@ import { View, Text, TouchableOpacity } from "react-native";
 import Icon from "react-native-vector-icons/Feather";
 import ROUTE_NAMES from "../../config/route-names";
 import { ENV } from "../../../config/configurations";
-import Colors from "../../../assets/data/color-list";
+import Colors from "../../../assets/data/color-list.json";
 import Styles from "../../../config/styles";
 import OwnStyles from "./styles";
 

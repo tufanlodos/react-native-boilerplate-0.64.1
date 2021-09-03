@@ -18,7 +18,7 @@ import useScreenDimensions from "../lib/orientation";
 import { ASYNC_STORAGE_KEYS } from "../config/configurations";
 import ROUTE_NAMES from "./config/route-names";
 import Styles from "../config/styles";
-import Colors from "../assets/data/color-list";
+import Colors from "../assets/data/color-list.json";
 
 const RootStack = createStackNavigator();
 

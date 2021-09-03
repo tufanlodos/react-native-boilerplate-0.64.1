@@ -4,7 +4,7 @@ import { ASYNC_STORAGE_KEYS } from "../config/configurations";
 
 const initialState = {
   ready: false,
-  data: null // LoginResponseModel
+  data: null
 };
 
 const accountReducer = (state, action) => {

@@ -1,5 +1,5 @@
 import { Platform, StyleSheet } from "react-native";
-import Colors from "../assets/data/color-list";
+import Colors from "../assets/data/color-list.json";
 import { ENV } from "./configurations";
 import { widthPercentageToDP as wp, heightPercentageToDP as hp } from "../lib/responsive";
 
