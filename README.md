@@ -1,9 +1,9 @@
-# React Native 0.64.0 boilerplate
+# React Native 0.64.1 boilerplate
 
 ## Includes
 
 - React 17
-- React Native 0.64.0
+- React Native 0.64.1
 - React Navigation 5 (includes stack and bottom-tabs)
 - React Native Async Storage
 - React Native Device Info
